@@ -1,0 +1,47 @@
+
+gprof  pthread_create must be wrapped 
+
+=================================================
+1. compile gprof-helper.so
+gcc -shared -nostdlib -fPIC gprof-helper.c -o gprof-helper.so -lpthread -ldl 
+
+2. allow load so file in current dictionary  
+  export LD_LIBRARY_PATH=./   
+  
+3. complile multi-thead program with gprof and gprof-helper.so
+  gcc -pg a.c -L. gprof-helper.so
+
+4. use gprof and get gmon.out
+  
+   gprof -b a.out gmon.out 
+
+====================================================
+
+   Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00      100     0.00     0.00  fun1
+  0.00      0.00     0.00      100     0.00     0.00  fun2
+
+
+                        Call graph
+
+
+granularity: each sample hit covers 2 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00     100/100         fun [9]
+[1]      0.0    0.00    0.00     100         fun1 [1]
+-----------------------------------------------
+                0.00    0.00     100/100         fun [9]
+[2]      0.0    0.00    0.00     100         fun2 [2]
+-----------------------------------------------
+
+
+Index by function name
+
+   [1] fun1                    [2] fun2
