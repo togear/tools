@@ -4,9 +4,11 @@
 
 * [Config](#Config)
 * [Result](#Result)
+
 #Config
 config squid.conf
-``
+
+```
 acl www_test_com url_regex -i http://www.test.com/.*
 url_rewrite_access allow www_test_com
 url_rewrite_access deny all 
@@ -15,10 +17,11 @@ url_rewrite_children 200
 storeurl_rewrite_concurrency 10
 url_rewrite_host_header on
 redirector_bypass off 
-``
-# Result
+```
+#Result
 use curl to test
-'''
+
+```curl
  curl -svo /dev/null http://www.test.com/test1.mp4  -x 10.10.100.33:80 
  * About to connect() to proxy 10.10.100.33 port 80
  *   Trying 10.10.100.33... connected
@@ -38,4 +41,4 @@ use curl to test
  * HTTP/1.0 connection set to keep alive!
  < Connection: keep-alive
  * Connection #0 to host 10.10.100.33 left intact
-'''
+```
