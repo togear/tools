@@ -7,6 +7,7 @@
 * [setproctitle](#setproctitle)
 * [gprof](#gprof)
 * [base64](#base64)
+* [lualib](#lualib)
 
 
 #dump_hex
@@ -21,3 +22,5 @@ setproctitle.c -- set program name if the system not provided setproctitle funct
 gprof -- preload library to profile pthread-enabled programs and test program
 #base64
 base64  -- url encode and decode
+#lualib
+lualib  -- C invoke lua
