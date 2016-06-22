@@ -33,7 +33,7 @@ def Producer():
     results = pool.map(urllib2.urlopen, urls)
     #close the pool and wait for the work to finish 
     pool.close() 
-    pool.join
+    pool.join()
 
     print "Done! time Taken()",format(time.time()-start_time)
 
