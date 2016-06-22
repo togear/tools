@@ -8,6 +8,7 @@
 * [gprof](#gprof)
 * [base64](#base64)
 * [lualib](#lualib)
+* [rfc1738](#rfc1738)
 
 
 #dump_hex
@@ -24,3 +25,5 @@ gprof -- preload library to profile pthread-enabled programs and test program
 base64  -- url encode and decode
 #lualib
 lualib  -- C invoke lua
+#rfc1738
+rfc1738 --URL encode & decode
