@@ -60,13 +60,13 @@ SCM_CREDENTIALS
 Send or receive UNIX credentials. This can be used for authentication. The credentials are passed as a struct ucred ancillary message. 
 Thus structure is defined in <sys/socket.h> as follows:
 
-···
+```
 struct ucred {
     pid_t pid;    /* process ID of the sending process */
     uid_t uid;    /* user ID of the sending process */
     gid_t gid;    /* group ID of the sending process */
 };
-···
+```
 
 Since glibc 2.8, the _GNU_SOURCE feature test macro must be defined (before including any header files) in order to obtain the definition of this structure.
 The credentials which the sender specifies are checked by the kernel. A process with effective user ID 0 is allowed to specify values that do not match its own. The sender must specify its own process ID (unless it has the capability CAP_SYS_ADMIN), its user ID, effective user ID, or saved set-user-ID (unless it has CAP_SETUID), and its group ID, effective group ID, or saved set-group-ID (unless it has CAP_SETGID). To receive a struct ucred message the SO_PASSCRED option must be enabled on the socket.
