@@ -9,6 +9,7 @@
 * [base64](#base64)
 * [lualib](#lualib)
 * [rfc1738](#rfc1738)
+* [unix_domain_socket](#unix_domain_socket)
 
 
 #dump_hex
@@ -27,3 +28,5 @@ base64  -- url encode and decode
 lualib  -- C invoke lua
 #rfc1738
 rfc1738 --URL encode & decode
+#unix_domain_socket
+unix_domain_socket-- inter-process communication

@@ -2,13 +2,14 @@
 [UnixDomainSocket](http://linux.die.net/man/7/unix) sockets for local interprocess communication
 
 ##msghdr discription
-'''
+```
 struct iovec {                    /* Scatter/gather array items */
     void  *iov_base;              /* Starting address */
     size_t iov_len;               /* Number of bytes to transfer */
 };
-'''
-'''struct msghdr {
+```
+```
+struct msghdr {
     void         *msg_name;       /* optional address */
     socklen_t     msg_namelen;    /* size of address */
     struct iovec *msg_iov;        /* scatter/gather array */
@@ -17,20 +18,20 @@ struct iovec {                    /* Scatter/gather array items */
     size_t        msg_controllen; /* ancillary data buffer len */
     int           msg_flags;      /* flags on received message */
 };
-'''
+```
 
-The msg_name field points to a caller-allocated buffer that is used to return the source address if the socket is unconnected.  The
+* The msg_name field points to a caller-allocated buffer that is used to return the source address if the socket is unconnected.  The
 caller should set msg_namelen to the size of this buffer before this call; upon return from a successful call, msg_namelen will contain
 the length of the returned address.  If the application does not need to know the source address, msg_name can be specified as NULL.
 
-The fields msg_iov and msg_iovlen describe scatter-gather locations,as discussed in readv(2).
+* The fields msg_iov and msg_iovlen describe scatter-gather locations,as discussed in readv(2).
 
-The field msg_control, which has length msg_controllen, points to a buffer for other protocol control-related messages or miscellaneous
+* The field msg_control, which has length msg_controllen, points to a buffer for other protocol control-related messages or miscellaneous
 ancillary data.  When recvmsg() is called, msg_controllen should contain the length of the available buffer in msg_control; upon
 return from a successful call it will contain the length of the control message sequence.
 
-The messages are of the form:
-    '''
+* The messages are of the form:
+    ```
     struct cmsghdr {
         size_t cmsg_len;    /* Data byte count, including header
                                (type is socklen_t in POSIX) */
@@ -39,7 +40,7 @@ The messages are of the form:
         /* followed by
            unsigned char cmsg_data[]; */
     };
-    '''
+    ```
 
 Ancillary data should be accessed only by the macros defined in cmsg(3).
 
