@@ -10,6 +10,7 @@
 * [lualib](#lualib)
 * [rfc1738](#rfc1738)
 * [unix_domain_socket](#unix_domain_socket)
+* [leveldb](#leveldb)
 
 
 #dump_hex
@@ -30,3 +31,5 @@ lualib  -- C invoke lua
 rfc1738 --URL encode & decode
 #unix_domain_socket
 unix_domain_socket-- inter-process communication
+#leveldb
+leveldb-- examples for leveldb api of C and C plus plus
