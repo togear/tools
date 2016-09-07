@@ -1,6 +1,7 @@
 # C tools collections
 
 ## Table of Contents
+* [linux_tips](#linux_tips)
 * [dump_hex](#dump_hex)
 * [print_backtrace](#print_backtrace)
 * [checksum](#checksum)
@@ -13,6 +14,8 @@
 * [leveldb](#leveldb)
 
 
+#linux_tips
+linux_tips-some tips in linux
 #dump_hex
 dump_hex.c --  this is the C code for dump hex 
 #print_backtrace
