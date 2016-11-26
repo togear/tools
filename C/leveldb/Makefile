@@ -5,6 +5,6 @@ lx: main.c
 run: lx
 	./lx
 clean:
-	rm -f *.o main *.gz *.tar
+	rm -f *.o main *.gz *.tar lx
 archive:
 	tar -zcvf lx.tar.gz lx

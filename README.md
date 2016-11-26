@@ -4,3 +4,4 @@ collection tools for programming, own lib
 #bash - bash shell collection
 #perl - perl useful collection
 #python - python collection
+#FP - function programming collection
